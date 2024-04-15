@@ -1,38 +1,48 @@
 .App {
   text-align: center;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+:root {
+  --color1: #00235b;
+  --color2: #e53b3a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-track {
+  background: #ddd; /* color of the tracking area */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body::-webkit-scrollbar-thumb {
+  background-color: #999; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
+}
+
+#why {
+  background-image: url("../src/Components/Images/herobg.svg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
+  display: grid;
+  place-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#design,
+#explore,
+#services {
+  height: 100vh;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#footer {
+  height: 50vh;
+  background-image: url("../src/Components/Images/herobg.svg");
+  color: white;
 }

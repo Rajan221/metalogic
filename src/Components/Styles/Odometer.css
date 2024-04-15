@@ -1,0 +1,32 @@
+#odometerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+  margin: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 30px -15px #999;
+  height: 10vh;
+  padding: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -13%;
+}
+
+#odometerContainer div {
+  color: teal;
+}
+
+#number {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 82px;
+
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  line-height: 4rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.0005em;
+  margin-bottom: 20px;
+}

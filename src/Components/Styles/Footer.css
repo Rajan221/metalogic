@@ -1,0 +1,50 @@
+#footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 70px 70px 70px;
+  text-align: left;
+  position: relative;
+}
+
+#leftContainer {
+  margin-top: -70px;
+}
+#leftContainer #logoContainer #logo {
+  margin-top: 20px;
+}
+#leftContainer #logoContainer #logoText {
+  margin-top: 100px;
+}
+
+#contactInfos,
+#logoBottom {
+  font-weight: 300;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05rem;
+}
+
+#copyright {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.85rem;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05rem;
+  font-weight: 500;
+}
+
+#rightContainer {
+  display: flex;
+  gap: 50px;
+}
+
+#rightContainer div div {
+  font-weight: 300;
+  font-size: 0.75rem;
+  margin-top: 10px;
+}
+
+#socialIcons {
+  display: flex;
+}
