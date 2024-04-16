@@ -6,7 +6,21 @@ import web from "../Images/icons/web.svg";
 import internship from "../Images/icons/internship.svg";
 import "../Styles/Services.css";
 
+import { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+
 function Services() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+    if (isInView) {
+      mainControls.start("animate");
+    }
+  }, [isInView]);
   const variables = [
     {
       key: 1,
@@ -50,31 +64,51 @@ function Services() {
     },
   ];
   return (
-    <div id="services">
-      <div>
-        <div id="ourServices">Our Services</div>
-        <h1>Empowering Your Vison</h1>
-        <div id="serviceQuote">
-          Our range of offerings is carefully curated to cater to your diverse
-          needs, ensuring that your digital journey is seamless, captivating,
-          and results-driven.
+    <div id="services" ref={ref}>
+      <motion.div
+        variants={{
+          initial: { opacity: 0, y: 100 },
+          animate: { opacity: 1, y: 0 },
+        }}
+        initial="initial"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
+        <div>
+          <div id="ourServices">Our Services</div>
+          <h1>Empowering Your Vison</h1>
+          <div id="serviceQuote">
+            Our range of offerings is carefully curated to cater to your diverse
+            needs, ensuring that your digital journey is seamless, captivating,
+            and results-driven.
+          </div>
+          <div id="buttonServices">
+            Learn More <i className="fa-solid fa-arrow-right"></i>
+          </div>
         </div>
-        <div id="buttonServices">
-          Learn More <i className="fa-solid fa-arrow-right"></i>
+        <div id="servicesCards">
+          {variables.map((info) => (
+            <motion.div
+              variants={{
+                initial: { opacity: 0, y: 100 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              initial="initial"
+              animate={mainControls}
+              transition={{ duration: 0.5, delay: info.key / 4 }}
+            >
+              <Card
+                key={info.key}
+                title={info.title}
+                image={info.image}
+                first={info.first}
+                back={info.back}
+                class={`class${info.key}`}
+              />
+            </motion.div>
+          ))}
         </div>
-      </div>
-      <div id="servicesCards">
-        {variables.map((info) => (
-          <Card
-            key={info.key}
-            title={info.title}
-            image={info.image}
-            first={info.first}
-            back={info.back}
-            class={`class${info.key}`}
-          />
-        ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

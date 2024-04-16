@@ -2,23 +2,31 @@ import logo from "../Images/metalogo.png";
 import "../Styles/Footer.css";
 import Odometer from "./Odometer";
 
-function Footer() {
+function Footer(props) {
   return (
     <div id="footer">
       <div id="leftContainer">
-        <Odometer />
+        {props.hide ? "" : <Odometer />}
         <div id="logoContainer">
           <img src={logo} id="logo" alt="" />
           <div id="logoText">
             MetaLogic
             <div id="logoBottom">Software Private Limited</div>
             <div id="contactInfos">
-              <div>Location Saptakhel, Lalitpur (Head office)</div>
-              <div>Phone + 977 9851353599</div>
-              <div>Email info@metalogic.com.np</div>
+              <div>
+                <i class="fa-solid fa-location-dot"></i> Saptakhel, Lalitpur
+                (Head office)
+              </div>
+              <div>
+                <i class="fa-solid fa-phone"></i> + 977 9851353599
+              </div>
+              <div>
+                <i class="fa-regular fa-envelope"></i> info@metalogic.com.np
+              </div>
             </div>
           </div>
           <div id="copyright">
+            <i class="fa-regular fa-copyright"></i>
             Copyright 2024 MetaLogic. All rights reserved.
           </div>
         </div>
@@ -50,10 +58,18 @@ function Footer() {
         <div>
           <h3>Join us on Social Media</h3>
           <div id="socialIcons">
-            <div>Whatsapp</div>
-            <div>Facebook</div>
-            <div>Instagram</div>
-            <div>Linked In</div>
+            <div>
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
           </div>
         </div>
       </div>

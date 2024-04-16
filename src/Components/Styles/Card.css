@@ -135,3 +135,29 @@
     opacity: 1;
   }
 } */
+
+@media only screen and (max-height: 720px) {
+  .flip-card {
+    width: 190px;
+    height: 330px;
+  }
+  #serviceFirst {
+    font-weight: 400;
+    font-size: 12px;
+  }
+  #backText {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .class2,
+  .class4 {
+    margin-top: 0vh;
+  }
+  .class2back,
+  .class4back {
+    margin-top: 0vh;
+  }
+}

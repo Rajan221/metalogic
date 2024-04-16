@@ -42,3 +42,32 @@
   justify-content: center;
   gap: 80px;
 }
+
+@media only screen and (max-height: 720px) {
+  #services {
+    height: 150vh;
+  }
+  #buttonServices {
+    height: 30px;
+    width: 120px;
+  }
+  /* #servicesCards {
+    width: 70%;
+  } */
+}
+
+@media only screen and (max-width: 420px) {
+  #services {
+    height: 320vh;
+  }
+  #servicesCards {
+    display: grid;
+  }
+  #serviceQuote {
+    padding: 0px 15px 0px 15px;
+  }
+
+  #buttonServices {
+    width: 40vw;
+  }
+}

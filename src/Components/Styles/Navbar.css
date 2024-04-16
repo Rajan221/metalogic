@@ -16,6 +16,7 @@
 
 .hidden {
   transform: translateY(-100px);
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #contentsInside {
@@ -42,7 +43,7 @@
   letter-spacing: 0.2rem;
 }
 #navItems {
-  width: 20%;
+  width: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,7 +53,7 @@
   user-select: none;
   cursor: pointer;
 }
-#active {
+.active {
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(
     90deg,
@@ -90,6 +91,8 @@
   display: grid;
   place-items: center;
   padding-right: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 #buttonNavbar {
@@ -104,4 +107,103 @@
   font-weight: 400;
   user-select: none;
   cursor: pointer;
+}
+
+#link {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-height: 720px) {
+  .navbar {
+    height: 12vh;
+  }
+  #navItems {
+    width: 40%;
+  }
+  #buttonNavbar {
+    width: 8vw;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .navbar {
+    height: auto; /* Change height to auto to accommodate smaller screens */
+    display: block;
+    padding: 10px 0;
+    width: 100vw; /* Add padding for better spacing */
+  }
+  .hidden {
+    transform: translateY(-220px);
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  #contentsInside {
+    display: block;
+    /* Adjust width to make room for smaller screens */
+  }
+
+  #navItems div {
+    font-size: 12px;
+  }
+
+  #navItems {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  #navItems div:not(:first-child):not(:nth-child(2)) {
+    display: none;
+  }
+  .active {
+    border: none;
+  }
+
+  #logoContainer {
+    padding: 10px 0; /* Adjust padding for better spacing */
+  }
+
+  #buttonNavbar {
+    width: 70%; /* Adjust button width for smaller screens */
+  }
+
+  #getInTouch {
+    display: none; /* Adjust padding for better spacing */
+  }
+}
+
+/* for the info */
+#infoBox {
+  position: relative;
+}
+
+#info {
+  transform: scale(2);
+}
+
+#hideInfo {
+  display: none;
+}
+#showInfo {
+  display: block;
+}
+
+.information {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100px;
+  border-radius: 12px;
+  width: 400px;
+  display: block;
+  padding: 20px;
+}
+
+#forMore {
+  margin-top: 10px;
+}
+#moreInfo {
+  color: #ffb089;
 }

@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../Styles/ExploreComponent.css";
+
+import gradient from "../Images/products_bg.svg";
+
 import banshwali1 from "../Images/chart.svg";
 import banshwali2 from "../Images/contribution.svg";
 import banshwali3 from "../Images/idcard.svg";
@@ -8,7 +11,21 @@ import digital1 from "../Images/cashout.svg";
 import digital2 from "../Images/dashboard.svg";
 import digital3 from "../Images/task.svg";
 
+import { motion, useInView, useAnimation } from "framer-motion";
+
 function ExploreComponent(props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+    if (isInView) {
+      mainControls.start("animate");
+    }
+  }, [isInView]);
+
   const banshwaliImages = [banshwali1, banshwali2, banshwali3];
   const digitalImages = [digital1, digital2, digital3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -55,38 +72,49 @@ function ExploreComponent(props) {
 
   return (
     <>
-      <div id="demo">
-        <div id="imageSliding">
-          <div className="imageContainer">
-            <img
-              id="image"
-              src={activeContent.images[currentImageIndex]}
-              alt={props.active}
-              className="imageTransition"
-              key={currentImageIndex} // Add key to trigger re-render when image changes
-            />
+      <motion.div
+        variants={{
+          initial: { opacity: 0, x: 100 },
+          animate: { opacity: 1, x: 0 },
+        }}
+        initial="initial"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <img src={gradient} alt="" srcset="" id="gradient" />
+        <div id="demo" ref={ref}>
+          <div id="imageSliding">
+            <div className="imageContainer">
+              <img
+                id="image"
+                src={activeContent.images[currentImageIndex]}
+                alt={props.active}
+                className="imageTransition slide-enter-right"
+                key={currentImageIndex} // Add key to trigger re-render when image changes
+              />
+            </div>
+            <div>{activeContent.quote}</div>
           </div>
-          <div>{activeContent.quote}</div>
-        </div>
-        <div id="features">
-          <div>
-            <h1>Features</h1>
-            <p>{activeContent.headline}</p>
-            <hr />
-            <ul>
-              {activeContent.features.map((feature, index) => (
-                <li className="featuresPoints" key={index}>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div id="features">
+            <div>
+              <h1>Features</h1>
+              <p>{activeContent.headline}</p>
+              <hr />
+              <ul>
+                {activeContent.features.map((feature, index) => (
+                  <li className="featuresPoints" key={index}>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div id="button">
-            Learn More <i className="fa-solid fa-arrow-right"></i>
+            <div id="button">
+              Learn More <i className="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

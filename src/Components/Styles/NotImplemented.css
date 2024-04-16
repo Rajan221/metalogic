@@ -1,0 +1,9 @@
+#notImplemented {
+  display: grid;
+  place-items: cneter;
+  height: 100vh;
+  text-align: center;
+}
+#insideNot {
+  margin-top: 40vh;
+}

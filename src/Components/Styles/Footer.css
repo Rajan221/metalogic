@@ -10,7 +10,7 @@
   margin-top: -70px;
 }
 #leftContainer #logoContainer #logo {
-  margin-top: 20px;
+  margin-top: -20px;
 }
 #leftContainer #logoContainer #logoText {
   margin-top: 100px;
@@ -23,6 +23,11 @@
   margin-top: 10px;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.05rem;
+}
+
+#contactInfos div i {
+  transform: scale(1.5);
+  padding: 10px 10px 10px 0px;
 }
 
 #copyright {
@@ -47,4 +52,21 @@
 
 #socialIcons {
   display: flex;
+  justify-content: space-around;
+}
+#socialIcons div i {
+  transform: scale(2);
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 420px) {
+  #footer {
+    display: block;
+    height: 100vh;
+  }
+  #rightContainer {
+    display: block;
+  }
 }

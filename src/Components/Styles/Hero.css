@@ -76,3 +76,28 @@
 #learnMoreButton:hover > .fa-solid {
   transform: translateX(10px);
 }
+
+@media only screen and (max-height: 720px) {
+  #headline h1 {
+    font-size: 50px;
+
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #headline h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+
+    font-weight: 600;
+  }
+  #learnMoreButton {
+    background-color: var(--color2);
+    width: 40vw;
+  }
+
+  #hero iframe {
+    display: none;
+  }
+}

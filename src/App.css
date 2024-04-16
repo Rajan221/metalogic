@@ -4,6 +4,7 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  caret-color: transparent;
 }
 :root {
   --color1: #00235b;
@@ -42,7 +43,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 #footer {
-  height: 50vh;
+  height: 30vh;
   background-image: url("../src/Components/Images/herobg.svg");
   color: white;
+}
+
+@media only screen and (max-width: 420px) {
+  .App {
+    overflow: hidden;
+  }
 }

@@ -78,3 +78,62 @@ hr {
   border-top: 1px solid #ddd;
   margin: 20px 0;
 }
+
+.slide-enter-right {
+  transform: translateX(0);
+  animation: slide-enter-right-animation 0.5s ease-out forwards;
+}
+@keyframes slide-enter-right-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+#gradient {
+  position: absolute;
+  left: 0;
+  margin-top: 10vh;
+}
+
+@media only screen and (max-height: 720px) {
+  #demo {
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #demo {
+    display: block;
+    height: 120vh;
+    width: 95%;
+  }
+
+  #gradient {
+    display: none;
+  }
+
+  #imageSliding {
+    width: 90%;
+
+    font-weight: 300;
+    font-size: 14px;
+    padding: 30px;
+  }
+
+  #features {
+    text-align: center;
+    width: 90%;
+    padding: 0 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #button {
+    margin: auto;
+
+    width: 40vw;
+  }
+}

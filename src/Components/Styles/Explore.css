@@ -1,6 +1,7 @@
 #explore {
   display: grid;
   place-items: center;
+  margin-bottom: 10vh;
 }
 #exploreHeadline {
   text-align: left;
@@ -46,4 +47,21 @@
   background-color: white;
   border: 1px solid black;
   color: black;
+}
+
+@media only screen and (max-height: 720px) {
+  #explore {
+    margin-bottom: 40vh;
+  }
+  #exploreHeadline {
+    font-size: 42px;
+    margin-top: 10vh;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #explore {
+    height: 200vh;
+    padding-left: 10px;
+  }
 }
