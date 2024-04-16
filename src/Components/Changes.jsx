@@ -26,6 +26,8 @@ function Changes() {
     window.scrollTo(0, 0);
   }, []);
 
+  document.title = "Changes";
+
   return (
     <div>
       <div id="changes">

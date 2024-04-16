@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Styles/NotImplemented.css";
 
 function NotImplemented() {
+  document.title = "Not Found";
   return (
     <div id="notImplemented">
       <div id="insideNot">
